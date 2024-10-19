@@ -27,6 +27,7 @@ const Home = () => {
                     setActiveStatus={setActiveStatus}
                     handleSubmit={handleSubmit}
                 ></ExpencesIncome>
+
             </div>
         </div>
     );
