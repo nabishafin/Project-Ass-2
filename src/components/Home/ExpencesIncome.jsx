@@ -24,16 +24,21 @@ const ExpencesIncome = (props) => {
 
 
 
-    const [category, setCategory] = useState([])
+    const [category, setCategory] = useState('')
     const [amount, setAmount] = useState(0)
     const [date, setDate] = useState(getdate)
 
+    const handleClickeFrom = (e) => {
+        e.preventDefault();
+        const updateValue = category?.length === 0 ? categories[0] : category
+        handleSubmit({ updateValue, amount, date })
+    }
 
 
     return (
         <div>
             <div>
-                <form onSubmit={(e) => { handleSubmit({ e, category, amount, date }) }}>
+                <form onSubmit={(e) => handleClickeFrom(e)}>
                     <div
                         className="flex divide-x divide-slate-400/20 overflow-hidden rounded-md bg-white text-[0.8125rem] font-medium leading-5 text-slate-700 shadow-sm ring-1 ring-slate-700/10 mt-6"
                     >

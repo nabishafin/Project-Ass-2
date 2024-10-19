@@ -11,10 +11,8 @@ const Home = () => {
         setActiveStatus(prop)
     }
 
-    const handleSubmit = (prop) => {
-        const { e, category, amount, date } = prop
-        e.preventDefault();
-        console.log(category, amount, date)
+    const handleSubmit = ({ updateValue, amount, date }) => {
+        console.log(updateValue, amount, date)
     }
 
 
